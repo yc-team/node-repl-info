@@ -6,6 +6,18 @@ REPL - Read-Eval-Print-Loop（读取-执行-打印-循环）
 
 ### exit事件
 
+当用户用一些定义好的方式离开REPL：
+
+在REPL会话里面输入.exit或者按了ctrl+c两次发送SIGINT，或者按ctrl+d来发送input流的end信号
+
+示例：
+
+```javascript
+r.on('exit', function () {
+  console.log('Got "exit" event from repl!');
+  process.exit();
+});
+```
 
 ### REPL特性
 
