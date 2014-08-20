@@ -25,6 +25,26 @@ REPL - Read-Eval-Print-Loop（读取-执行-打印-循环）
 ```
 
 
+REPL提供在全局作用域访问任何一个变量。
+
+通过暴露一个变量给每一个REPLServer关联的context对象。
+
+
+```javascript
+var repl = require('repl'),
+	msg = "zhangyaochun";
+
+repl.start('> ').context.m = msg;
+```
+
+context对象里面的东西会在REPL里面出现：
+
+```
+mjr:~$ node repl_test.js
+> m
+'zhangyaochun'
+```
+
 
 有一些特殊的REPL命令：
 
